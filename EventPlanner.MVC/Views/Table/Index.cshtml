@@ -1,0 +1,46 @@
+@model List<TableListItem>
+
+<h1 class = "display-1">
+        Tables
+    </h1>
+        <a asp-action="Create" class = "btn btn-info">Add a table</a>
+    <hr>
+    <table class = "table table-striped">
+        <thead>
+            <tr>
+                <th>
+                   EventId 
+                </th>
+                <th>
+                    Price
+                </th>
+
+                 <th>
+                    AmountOfChairs
+                </th>
+            </tr>
+            
+        </thead>
+        <tbody>
+                @foreach(var e in Model)
+                {
+                    <tr>
+                    <td>
+                        @e.Id
+                    </td>
+                    <td>
+                        @e.Price
+                    </td>
+                    <td>
+                        @e.AmountOfChairs
+                    </td>
+                    <td>
+                        <a asp-route-id="@e.Id" asp-action="Detail" class = "btn btn-info">Details</a>
+                        <a asp-route-id="@e.Id" asp-action="Edit" class = "btn btn-warning">Edit</a>
+                        <a asp-route-id="@e.Id" asp-action="Delete" class = "btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                }
+
+        </tbody>
+    </table>  

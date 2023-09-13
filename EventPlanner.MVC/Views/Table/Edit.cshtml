@@ -1,0 +1,29 @@
+@model TableEdit
+
+<h1 class = "display-1 text-primary">
+    Update the event's table
+</h1>
+<hr>
+<form asp-action="EditTable">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <input asp-for="@Model.Id" class="form-control" hidden>
+
+  <div class="mb-3">
+    <label asp-for="@Model.Price" class="form-label">Price</label>
+    <input asp-for="@Model.Price" class="form-control">
+    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.AmountOfChairs" class="form-label">Amount of chairs</label>
+    <input asp-for="@Model.AmountOfChairs" class="form-control">
+    <span asp-validation-for="@Model.AmountOfChairs" class="text-danger"></span>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

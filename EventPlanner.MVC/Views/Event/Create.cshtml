@@ -1,0 +1,39 @@
+@model EventCreate
+
+<h1 class = "display-1 text-primary">
+    Add event menu
+</h1>
+<hr>
+<form asp-action="CreateEvent">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="mb-3">
+    <label asp-for="@Model.EventName" class="form-label">Event Name</label>
+    <input asp-for="@Model.EventName" class="form-control">
+    <span asp-validation-for="@Model.EventName" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.Description" class="form-label">Description</label>
+    <input asp-for="@Model.Description" class="form-control">
+    <span asp-validation-for="@Model.Description" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.Date" class="form-label">Date</label>
+    <input type="date" asp-for="@Model.Date" class="form-control">
+    <span asp-validation-for="@Model.Date" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.Location" class="form-label">Location</label>
+    <input asp-for="@Model.Location" class="form-control">
+    <span asp-validation-for="@Model.Location" class="text-danger"></span>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

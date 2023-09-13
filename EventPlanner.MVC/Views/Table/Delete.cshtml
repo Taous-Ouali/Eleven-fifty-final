@@ -1,0 +1,28 @@
+@model TableDetail
+
+<h1 class = "display-1 text-danger">
+ Are you sure you want to delete this: @Model.Id
+</h1>
+<hr>
+<div class = "border border-3 border-primary">
+    <ul>
+        <li>
+            @Model.Id
+        </li>
+        <li>
+            @Model.Price
+        </li>
+        <li>
+            @Model.AmountOfChairs
+        </li>
+    </ul>
+</div>
+
+<form asp-action="DeleteTable">
+    <div>
+        <input asp-for="@Model.Id" hidden>
+        <button class = "btn btn-danger" type = "submit">Delete</button>
+        <a asp-action="Index" class = "btn btn-secondary">Back to the table list</a>
+    </div>
+
+</form>

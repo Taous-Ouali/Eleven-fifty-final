@@ -1,0 +1,19 @@
+@model EventDetail
+
+<h1 class = "display-1">
+    @Model.EventName
+</h1>
+<hr>
+<div class = "border border-3 border-primary">
+    <ul>
+        <li>
+            @Model.Description
+        </li>
+        <li>
+            @Model.Date
+        </li>
+        <li>
+            @Model.Location
+        </li>
+    </ul>
+</div>

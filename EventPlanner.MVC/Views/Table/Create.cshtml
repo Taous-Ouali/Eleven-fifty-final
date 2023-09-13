@@ -1,0 +1,33 @@
+@model TableCreate
+
+<h1 class = "display-1 text-primary">
+   Add table to event  
+</h1>
+
+<form asp-action="CreateTable">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+  <div class="mb-3">
+    <label asp-for="@Model.EventId" class="form-label">Event Id</label>
+    <input asp-for="@Model.EventId" class="form-control">
+    <span asp-validation-for="@Model.EventId" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.Price" class="form-label">Price</label>
+    <input asp-for="@Model.Price" class="form-control">
+    <span asp-validation-for="@Model.Price" class="text-danger"></span>
+  </div>
+
+  <div class="mb-3">
+    <label asp-for="@Model.AmountOfChairs" class="form-label">AmountOfChairs</label>
+    <input asp-for="@Model.AmountOfChairs" class="form-control">
+    <span asp-validation-for="@Model.AmountOfChairs" class="text-danger"></span>
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
